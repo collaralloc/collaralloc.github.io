@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>3D旋转星球球动画演示</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+	var mystars = new Array("Earth.jpg","earth_atmos_4096.jpg","Luna.jpg","Mercury.jpg","Venus.jpg","Mars.jpg"
+	,"Jupiter.jpg","io-Jupiter.jpg","Saturn.jpg","Neptune.jpg","Uranus.jpg");
+	var name = new Array("地球","地表","月球","水星","金星","火星"
+	,"木星","木卫一","土星","海王星","天王星");
+	var sid = -1;
+	var k = 0;
+			function change() {
+				sid++; 
+				//document.write(mystars[sid])
+				sid=sid%11;
+				var obj = document.getElementById("p2");
+				
+				var sn=name[k]+name[k+1];
+				if (name[k+2]!=',')	{
+					sn=sn+name[k+2];
+					k+=4;
+				}
+				else k+=3;
+				if (k>name.length) k=0;
+				//alert(sn+k);
+				obj.innerText = sn;
+				var mystar = document.getElementById("myimg");
+				mystar.setAttribute("src", mystars[sid]);
+				alert(mydiv.getAttribute("src"));
+			}
+	</script>
+	
+<button onclick="change()" style="color:blue;font-size:20px;"> 顺序切换星球</button>
+<p id="p2" style="font-size:28px;">地球</p>
+  <a-scene>
+  <a-camera position='0 0 3' user-height='0'></a-camera>
+  <a-sphere id="myimg" src="earth_atmos_4096.jpg" radius="1.5" segments-height="53"> 
+     <a-animation attribute="rotation"
+              dur="10000"
+              fill= "forwards"
+              to="0 360 0"
+              easing="linear"
+              repeat="indefinite"></a-animation>
+  </a-sphere>
+  <a-sky segments-height="100" segments-width="100"  src="stars_sky_night_113553_3100x1740.jpg" color="#555" rotation="0 -90 0"></a-sky>
+</a-scene>
+  <script src='aframe.min.js'></script>
+  
+  
+</body>
+</html>
