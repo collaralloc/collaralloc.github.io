@@ -5,17 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Wecome to collaralloc!</title>
-
+    <link href="ecust/image/collar.ico" rel="shortcut icon" type="image/x-icon">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
    
   </head>
-  <body bgcolar="RGB(81,124,141)">
-    <h1>你好，世界！</h1>
-    <p style="font-size:28px;"><a href="aframe/star.html">进入太阳系</a></p>
-    <h2><a href="kaldi/thchs30.html">kaldi中文实例运行步骤（清华语料库）</a><a href="kaldi/thchs30.md">（下载）</a></h2>
+  <body style="background-color: black;">
 
+      <!-- Static navbar -->
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Collaralloc</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#">Algotithm</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="aframe/star.html">ComputerGraph</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">DeepLearning <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="kaldi/thchs30.html">kaldi中文实例thchs30</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+              
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Default <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">Static top</a></li>
+              <li><a href="#">Fixed top</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </nav>
+    <div id="scene" style="position: absolute;z-index: -5;width: 100%;height: 100%;"></div>
+		<div class="container">
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="jumbotron" style="margin-top:10%;background-color: rgba(250,250,250,0.3);">
+        <h1>你好，世界！ </h1>
+      </div>
+    </div> <!-- /container -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="three/js/three.js"></script>        
+    <script src="three/js/OBJLoader.js"></script>
+    <script src="three/js/MTLLoader.js"></script> 
+    <script src="three/js/DDSLoader.js"></script> 
+		<script src="three/indexPage.js"></script>
+			
     <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
     <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
